@@ -1,4 +1,5 @@
-﻿// added alt text to images for accessibility
+﻿// tweaked spacing on cards
+// added alt text to images for accessibility
 // debug log for selected comic
 // mobile view shows thumbnail directly, desktop shows preview pane
 // detailsCache stores fetched comic details
@@ -150,6 +151,8 @@ export default function IndexClient({ initialComics }: { initialComics: ComicSum
     </main>
   );
 }
+
+
 
 
 
