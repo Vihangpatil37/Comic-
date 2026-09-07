@@ -226,6 +226,7 @@ router.delete("/:id", async (req: Request, res: Response): Promise<void> => {
   res.status(204).send();
 });
 
+// publish logic - assigns entry number and sets status to PUBLISHED
 router.post("/:id/publish", async (req: Request, res: Response): Promise<void> => {
   try {
     const comic = await prisma.comic.findUnique({ where: { id: req.params.id as string } });
@@ -286,6 +287,7 @@ router.post("/:id/unpublish", async (req: Request, res: Response): Promise<void>
 });
 
 export default router;
+
 
 
 
