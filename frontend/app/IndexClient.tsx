@@ -1,4 +1,5 @@
-﻿// IndexClient - card catalog with hover preview
+﻿// detailsCache stores fetched comic details
+// IndexClient - card catalog with hover preview
 "use client";
 
 import { useState, useEffect } from "react";
@@ -8,6 +9,7 @@ import { ComicSummary, ComicDetail } from "../../shared/types/comic";
 import { fetchComic } from "../lib/api-client";
 
 export default function IndexClient({ initialComics }: { initialComics: ComicSummary[] }) {
+  // cache for comic details to avoid refetching
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [detailsCache, setDetailsCache] = useState<Record<string, ComicDetail>>({});
   
@@ -145,4 +147,6 @@ export default function IndexClient({ initialComics }: { initialComics: ComicSum
     </main>
   );
 }
+
+
 
