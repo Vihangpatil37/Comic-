@@ -4,6 +4,7 @@ import Link from "next/link";
 import "../styles/tokens.css";
 import "./globals.css";
 
+// metadata for seo - title and description
 export const metadata: Metadata = {
   title: "Comic Archive",
   description: "A digital comic archive",
@@ -35,4 +36,5 @@ export default function RootLayout({
     </html>
   );
 }
+
 
