@@ -3,7 +3,7 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { ComicDetail } from "../../shared/types/comic";
+import type { ComicDetail } from "../../shared/types/comic"; // removed unused import style
 import { createComic, updateComic } from "../lib/api-client";
 
 interface ComicFormProps {
@@ -153,4 +153,5 @@ export default function ComicForm({ initialData, isEdit }: ComicFormProps) {
     </form>
   );
 }
+
 
