@@ -1,4 +1,5 @@
-﻿// detailsCache stores fetched comic details
+﻿// mobile view shows thumbnail directly, desktop shows preview pane
+// detailsCache stores fetched comic details
 // IndexClient - card catalog with hover preview
 "use client";
 
@@ -147,6 +148,7 @@ export default function IndexClient({ initialComics }: { initialComics: ComicSum
     </main>
   );
 }
+
 
 
 
