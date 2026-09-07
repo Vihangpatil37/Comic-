@@ -8,6 +8,7 @@ const router = Router();
 const STORAGE_BUCKET_COVERS = process.env.STORAGE_BUCKET_COVERS || "covers";
 const STORAGE_BUCKET_PDFS = process.env.STORAGE_BUCKET_PDFS || "comics-pdf";
 
+// multer config - 50MB limit for pdfs, 5MB for covers checked manually
 const upload = multer({
   storage: multer.memoryStorage(),
   limits: {
@@ -284,4 +285,5 @@ router.post("/:id/unpublish", async (req: Request, res: Response): Promise<void>
 });
 
 export default router;
+
 
