@@ -1,4 +1,4 @@
-import { Router, Request, Response } from "express";
+﻿import { Router, Request, Response } from "express";
 import multer from "multer";
 import { z } from "zod";
 import prisma from "../lib/prisma";
@@ -21,6 +21,7 @@ function getCoverUrl(coverKey: string | null): string | null {
   return data.publicUrl;
 }
 
+// slug generator - turns title into url friendly string
 function generateSlug(title: string): string {
   return title.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
 }
@@ -283,3 +284,4 @@ router.post("/:id/unpublish", async (req: Request, res: Response): Promise<void>
 });
 
 export default router;
+
