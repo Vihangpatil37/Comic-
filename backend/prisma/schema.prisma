@@ -1,0 +1,32 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Comic {
+  id            String    @id @default(uuid())
+  slug          String    @unique
+  title         String
+  description   String?
+  category      String?
+  pageCount     Int       @map("page_count")
+  year          Int
+  pdfKey        String    @map("pdf_key")      // Supabase Storage object path, private bucket
+  coverKey      String?   @map("cover_key")    // Supabase Storage object path, public bucket
+  status        ComicStatus @default(DRAFT)
+  entryNumber   Int?      @unique @map("entry_number") // assigned on first publish, monotonic
+  createdAt     DateTime  @default(now()) @map("created_at")
+  updatedAt     DateTime  @updatedAt @map("updated_at")
+  publishedAt   DateTime? @map("published_at")
+
+  @@map("comics")
+}
+
+enum ComicStatus {
+  DRAFT
+  PUBLISHED
+}
