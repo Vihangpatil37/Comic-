@@ -33,3 +33,17 @@ comic-archive/
 - STORAGE_BUCKET_COVERS
 - STORAGE_BUCKET_PDFS
 
+
+
+## API Docs
+| Method | Route | Description |
+|--------|-------|-------------|
+| GET | /api/comics | List published comics |
+| GET | /api/comics/:slug | Comic detail |
+| GET | /api/comics/:slug/read | Signed PDF URL |
+| POST | /api/admin/comics | Create comic |
+| PATCH | /api/admin/comics/:id | Update comic |
+| DELETE | /api/admin/comics/:id | Delete comic |
+| POST | /api/admin/comics/:id/publish | Publish |
+| POST | /api/admin/comics/:id/unpublish | Unpublish |
+
