@@ -10,6 +10,7 @@ async function getAuthHeader(): Promise<Record<string, string>> {
   return session?.access_token ? { Authorization: `Bearer ${session.access_token}` } : {};
 }
 
+// fetchComics - pagination support via page param
 export async function fetchComics(category?: string, page = 1): Promise<{ comics: ComicSummary[], total: number }> {
   const url = new URL(`${API_BASE}/comics`);
   if (category) url.searchParams.set("category", category);
@@ -100,5 +101,6 @@ export async function unpublishComic(id: string): Promise<ComicDetail> {
   if (!res.ok) throw new Error("Failed to unpublish");
   return res.json();
 }
+
 
 
