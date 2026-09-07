@@ -1,3 +1,4 @@
+﻿// cors is used to allow frontend to call backend api
 import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
@@ -27,3 +28,4 @@ app.get("/api/admin/session", verifyAdmin, (req, res) => {
 app.listen(port, () => {
   console.log(`Backend listening on port ${port}`);
 });
+
