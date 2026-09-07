@@ -1,4 +1,4 @@
-﻿/* changed font size on mobile - smaller for better readability */
+﻿/* mobile font tweak */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -30,4 +30,5 @@
     border-radius: 2px;
   }
 }
+
 
