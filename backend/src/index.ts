@@ -16,7 +16,7 @@ app.use(express.json());
 
 // health check endpoint - used by frontend to verify backend is running
 app.get("/health", (req, res) => {
-  res.json({ status: "ok" });
+  res.json({ status: "ok", uptime: process.uptime(), timestamp: new Date().toISOString() });
 });
 
 app.use("/api/comics", comicsRouter);
@@ -29,6 +29,7 @@ app.get("/api/admin/session", verifyAdmin, (req, res) => {
 app.listen(port, () => {
   console.log(`Server is running on port ${port} ðŸš€`);
 });
+
 
 
 
