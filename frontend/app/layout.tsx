@@ -7,7 +7,7 @@ import "./globals.css";
 // metadata for seo - title and description
 export const metadata: Metadata = {
   title: "Comic Archive",
-  description: "A digital comic archive",
+  description: "A curated digital comic archive - discover and read comics online",
 };
 
 export default function RootLayout({
@@ -36,6 +36,7 @@ export default function RootLayout({
     </html>
   );
 }
+
 
 
 
