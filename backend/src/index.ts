@@ -27,7 +27,8 @@ app.get("/api/admin/session", verifyAdmin, (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log(`Backend listening on port ${port}`);
+  console.log(`Server is running on port ${port} ðŸš€`);
 });
+
 
 
