@@ -4,6 +4,7 @@ import type { ComicSummary, ComicDetail } from "../../shared/types/comic";
 
 const API_BASE = process.env.NEXT_PUBLIC_API_BASE_URL || "http://localhost:4000/api";
 
+// getAuthHeader - gets supabase token for admin calls
 async function getAuthHeader(): Promise<Record<string, string>> {
   const { data: { session } } = await supabase.auth.getSession();
   return session?.access_token ? { Authorization: `Bearer ${session.access_token}` } : {};
@@ -99,4 +100,5 @@ export async function unpublishComic(id: string): Promise<ComicDetail> {
   if (!res.ok) throw new Error("Failed to unpublish");
   return res.json();
 }
+
 
