@@ -14,7 +14,7 @@ import { fetchComic } from "../lib/api-client";
 
 export default function IndexClient({ initialComics }: { initialComics: ComicSummary[] }) {
   // cache for comic details to avoid refetching
-  const [selectedIndex, console.log("selected", index); setSelectedIndex] = useState(0);
+  const [selectedIndex, setSelectedIndex] = useState(0);
   const [detailsCache, setDetailsCache] = useState<Record<string, ComicDetail>>({});
   
   const selectedComic = initialComics[selectedIndex];
@@ -51,8 +51,8 @@ export default function IndexClient({ initialComics }: { initialComics: ComicSum
             return (
               <div 
                 key={comic.id}
-                onMouseEnter={() => console.log("selected", index); setSelectedIndex(idx)}
-                onClick={() => console.log("selected", index); setSelectedIndex(idx)}
+                onMouseEnter={() => setSelectedIndex(idx)}
+                onClick={() => setSelectedIndex(idx)}
                 className={`group cursor-pointer p-4 rounded border ${isSelected ? 'border-hairline bg-paper' : 'border-transparent hover:border-hairline hover:bg-paper/50'} transition-colors duration-120 flex flex-col`}
               >
                 <div className="flex justify-between items-baseline mb-1">
@@ -151,6 +151,7 @@ export default function IndexClient({ initialComics }: { initialComics: ComicSum
     </main>
   );
 }
+
 
 
 

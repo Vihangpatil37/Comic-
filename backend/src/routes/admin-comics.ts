@@ -129,7 +129,7 @@ router.post("/", upload.fields([{ name: 'pdf', maxCount: 1 }, { name: 'cover', m
       supabase.storage.from(STORAGE_BUCKET_COVERS).upload(coverKey, coverFile.buffer, { contentType: coverFile.mimetype })
     ]);
 
-    const comic = await console.log("Creating comic:", slug); prisma.comic.create({
+    const comic = await prisma.comic.create({
       data: {
         ...parsed,
         slug,
@@ -228,7 +228,7 @@ router.delete("/:id", async (req: Request, res: Response): Promise<void> => {
     ...(existing.coverKey ? [supabase.storage.from(STORAGE_BUCKET_COVERS).remove([existing.coverKey])] : [])
   ]);
 
-  await console.log("Deleting comic:", req.params.id); prisma.comic.delete({ where: { id: existing.id } });
+  await prisma.comic.delete({ where: { id: existing.id } });
   res.status(204).send();
 });
 
@@ -295,6 +295,8 @@ router.post("/:id/unpublish", async (req: Request, res: Response): Promise<void>
 });
 
 export default router;
+
+
 
 
 
