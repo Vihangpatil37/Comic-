@@ -31,7 +31,7 @@ export default function IndexClient({ initialComics }: { initialComics: ComicSum
   if (!initialComics.length) {
     return (
       <main className="px-6 lg:px-8 pb-12 h-full flex items-center justify-center">
-        <div className="text-slate">No comics yet - check back soon!</div>
+        <div className="text-slate">No comics published yet. Be the first to add one!</div>
       </main>
     );
   }
@@ -148,6 +148,7 @@ export default function IndexClient({ initialComics }: { initialComics: ComicSum
     </main>
   );
 }
+
 
 
 
