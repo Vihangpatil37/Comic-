@@ -1,4 +1,5 @@
-﻿// layout component - shared header/footer for all pages
+﻿// fixed indentation
+// layout component - shared header/footer for all pages
 import type { Metadata } from "next";
 import Link from "next/link";
 import "../styles/tokens.css";
@@ -36,6 +37,7 @@ export default function RootLayout({
     </html>
   );
 }
+
 
 
 
