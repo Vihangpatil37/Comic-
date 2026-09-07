@@ -1,4 +1,5 @@
-﻿// storage buckets: covers (public) and comics-pdf (private)
+﻿// signed url logic - creates temporary url for private pdf
+// storage buckets: covers (public) and comics-pdf (private)
 // public comics router - no auth needed
 import { Router, Request, Response } from "express";
 import prisma from "../lib/prisma";
@@ -106,6 +107,7 @@ router.get("/:slug/read", async (req: Request, res: Response): Promise<void> => 
 });
 
 export default router;
+
 
 
 
