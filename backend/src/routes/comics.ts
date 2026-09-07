@@ -1,3 +1,4 @@
+﻿// public comics router - no auth needed
 import { Router, Request, Response } from "express";
 import prisma from "../lib/prisma";
 import { supabase } from "../lib/supabase-server";
@@ -104,3 +105,4 @@ router.get("/:slug/read", async (req: Request, res: Response): Promise<void> => 
 });
 
 export default router;
+
