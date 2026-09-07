@@ -266,6 +266,7 @@ router.post("/:id/publish", async (req: Request, res: Response): Promise<void> =
   }
 });
 
+// unpublish route - sets back to DRAFT
 router.post("/:id/unpublish", async (req: Request, res: Response): Promise<void> => {
   try {
     const comic = await prisma.comic.findUnique({ where: { id: req.params.id as string } });
@@ -288,6 +289,7 @@ router.post("/:id/unpublish", async (req: Request, res: Response): Promise<void>
 });
 
 export default router;
+
 
 
 
