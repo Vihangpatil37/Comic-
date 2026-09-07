@@ -1,4 +1,5 @@
-﻿// signed url logic - creates temporary url for private pdf
+﻿// renamed records to comics for clarity
+// signed url logic - creates temporary url for private pdf
 // storage buckets: covers (public) and comics-pdf (private)
 // public comics router - no auth needed
 import { Router, Request, Response } from "express";
@@ -107,6 +108,9 @@ router.get("/:slug/read", async (req: Request, res: Response): Promise<void> => 
 });
 
 export default router;
+
+
+
 
 
 
