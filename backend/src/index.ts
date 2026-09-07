@@ -14,6 +14,7 @@ const port = process.env.PORT || 4000;
 app.use(cors());
 app.use(express.json());
 
+// health check endpoint - used by frontend to verify backend is running
 app.get("/health", (req, res) => {
   res.json({ status: "ok" });
 });
@@ -28,4 +29,5 @@ app.get("/api/admin/session", verifyAdmin, (req, res) => {
 app.listen(port, () => {
   console.log(`Backend listening on port ${port}`);
 });
+
 
