@@ -1,3 +1,4 @@
+﻿// api client - all backend endpoints
 import { supabase } from "./supabase-client";
 import type { ComicSummary, ComicDetail } from "../../shared/types/comic";
 
@@ -98,3 +99,4 @@ export async function unpublishComic(id: string): Promise<ComicDetail> {
   if (!res.ok) throw new Error("Failed to unpublish");
   return res.json();
 }
+
