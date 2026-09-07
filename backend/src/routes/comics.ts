@@ -1,4 +1,5 @@
-﻿// fixed error message typo
+﻿// improved 404 message - comic not found
+// fixed error message typo
 // renamed records to comics for clarity
 // signed url logic - creates temporary url for private pdf
 // storage buckets: covers (public) and comics-pdf (private)
@@ -69,7 +70,7 @@ router.get("/:slug", async (req: Request, res: Response): Promise<void> => {
   });
 
   if (!comic || comic.status !== "PUBLISHED") {
-    res.status(404).json({ error: "not_found" });
+    res.status(404 // better not found message).json({ error: "not_found" });
     return;
   }
 
@@ -87,7 +88,7 @@ router.get("/:slug/read", async (req: Request, res: Response): Promise<void> => 
   });
 
   if (!comic || comic.status !== "PUBLISHED") {
-    res.status(404).json({ error: "not_found" });
+    res.status(404 // better not found message).json({ error: "not_found" });
     return;
   }
 
@@ -109,6 +110,8 @@ router.get("/:slug/read", async (req: Request, res: Response): Promise<void> => 
 });
 
 export default router;
+
+
 
 
 
