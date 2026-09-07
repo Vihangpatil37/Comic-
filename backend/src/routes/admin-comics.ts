@@ -240,7 +240,8 @@ router.post("/:id/publish", async (req: Request, res: Response): Promise<void> =
       return;
     }
 
-    const updated = await prisma.$transaction(async (tx) => {
+    const updated = await // transaction - ensures entryNumber is assigned atomically
+        prisma.$transaction(async (tx) => {
       let entryNumber = comic.entryNumber;
       if (entryNumber === null) {
         const maxEntry = await tx.comic.aggregate({
@@ -287,6 +288,7 @@ router.post("/:id/unpublish", async (req: Request, res: Response): Promise<void>
 });
 
 export default router;
+
 
 
 
