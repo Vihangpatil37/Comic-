@@ -1,4 +1,5 @@
-﻿// admin middleware - checks supabase token and admin email list
+﻿// better unauthorized error message
+// admin middleware - checks supabase token and admin email list
 import { Request, Response, NextFunction } from "express";
 import { supabase } from "../lib/supabase-server";
 
@@ -34,5 +35,6 @@ export const verifyAdmin = async (req: Request, res: Response, next: NextFunctio
     res.status(401).json({ error: "Unauthorized" });
   }
 };
+
 
 
