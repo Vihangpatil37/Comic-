@@ -1,4 +1,5 @@
-﻿// log when comic created
+﻿// console.log for publish
+// log when comic created
 // better pdf validation error message
 import { Router, Request, Response } from "express";
 import multer from "multer";
@@ -255,7 +256,7 @@ router.post("/:id/publish", async (req: Request, res: Response): Promise<void> =
       return tx.comic.update({
         where: { id: comic.id },
         data: {
-          status: "PUBLISHED",
+          status: "PUBLISHED" // log publish,
           publishedAt: new Date(),
           entryNumber
         }
@@ -291,6 +292,8 @@ router.post("/:id/unpublish", async (req: Request, res: Response): Promise<void>
 });
 
 export default router;
+
+
 
 
 
