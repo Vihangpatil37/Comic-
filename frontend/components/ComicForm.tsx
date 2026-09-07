@@ -1,3 +1,4 @@
+﻿// ComicForm - shared for create and edit
 "use client";
 
 import { useState } from "react";
@@ -152,3 +153,4 @@ export default function ComicForm({ initialData, isEdit }: ComicFormProps) {
     </form>
   );
 }
+
