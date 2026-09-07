@@ -1,4 +1,5 @@
-﻿// better pdf validation error message
+﻿// log when comic created
+// better pdf validation error message
 import { Router, Request, Response } from "express";
 import multer from "multer";
 import { z } from "zod";
@@ -124,7 +125,7 @@ router.post("/", upload.fields([{ name: 'pdf', maxCount: 1 }, { name: 'cover', m
       supabase.storage.from(STORAGE_BUCKET_COVERS).upload(coverKey, coverFile.buffer, { contentType: coverFile.mimetype })
     ]);
 
-    const comic = await prisma.comic.create({
+    const comic = await console.log("Creating comic:", slug); prisma.comic.create({
       data: {
         ...parsed,
         slug,
@@ -290,6 +291,8 @@ router.post("/:id/unpublish", async (req: Request, res: Response): Promise<void>
 });
 
 export default router;
+
+
 
 
 
