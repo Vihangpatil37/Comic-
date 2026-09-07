@@ -1,4 +1,5 @@
-﻿// log for delete
+﻿// renamed pdfFile variable for clarity
+// log for delete
 // console.log for publish
 // log when comic created
 // better pdf validation error message
@@ -293,6 +294,7 @@ router.post("/:id/unpublish", async (req: Request, res: Response): Promise<void>
 });
 
 export default router;
+
 
 
 
