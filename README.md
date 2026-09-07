@@ -56,3 +56,8 @@ comic-archive/
 - Run `npx prisma generate` after schema changes
 - For CORS issues check backend cors config
 
+
+
+---
+Built with love for comics
+
