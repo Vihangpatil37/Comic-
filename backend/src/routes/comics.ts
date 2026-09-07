@@ -1,4 +1,4 @@
-﻿// improved 404 message - comic not found
+// improved 404 message - comic not found
 // fixed error message typo
 // renamed records to comics for clarity
 // signed url logic - creates temporary url for private pdf
@@ -69,8 +69,9 @@ router.get("/:slug", async (req: Request, res: Response): Promise<void> => {
     where: { slug: req.params.slug as string }
   });
 
+  // better not found message
   if (!comic || comic.status !== "PUBLISHED") {
-    res.status(404 // better not found message).json({ error: "not_found" });
+    res.status(404).json({ error: "not_found" });
     return;
   }
 
@@ -87,8 +88,9 @@ router.get("/:slug/read", async (req: Request, res: Response): Promise<void> => 
     where: { slug: req.params.slug as string }
   });
 
+  // better not found message
   if (!comic || comic.status !== "PUBLISHED") {
-    res.status(404 // better not found message).json({ error: "not_found" });
+    res.status(404).json({ error: "not_found" });
     return;
   }
 

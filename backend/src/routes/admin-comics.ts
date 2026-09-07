@@ -1,4 +1,4 @@
-﻿// log for file uploads
+// log for file uploads
 // renamed pdfFile variable for clarity
 // log for delete
 // console.log for publish
@@ -259,7 +259,8 @@ router.post("/:id/publish", async (req: Request, res: Response): Promise<void> =
       return tx.comic.update({
         where: { id: comic.id },
         data: {
-          status: "PUBLISHED" // log publish,
+          // log publish
+          status: "PUBLISHED",
           publishedAt: new Date(),
           entryNumber
         }
