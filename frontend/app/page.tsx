@@ -1,3 +1,4 @@
+﻿// homepage - server component that fetches comics
 import { fetchComics } from "../lib/api-client";
 import IndexClient from "./IndexClient";
 import { Metadata } from "next";
@@ -25,3 +26,4 @@ export default async function Home() {
     );
   }
 }
+
