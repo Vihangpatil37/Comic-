@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+  --color-vellum: #E4E1D6;
+  --color-paper: #F7F5EF;
+  --color-ink: #181B1E;
+  --color-slate: #5B5E58;
+  --color-hairline: #CBC7B9;
+  --color-oxide: #8B3A2A;
+
+  --font-display: 'Fraunces', serif;
+  --font-body: 'Work Sans', sans-serif;
+  --font-data: 'IBM Plex Mono', monospace;
+}
+
+body {
+  background-color: var(--color-vellum);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
