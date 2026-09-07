@@ -48,3 +48,11 @@ comic-archive/
 | POST | /api/admin/comics/:id/unpublish | Unpublish |
 
 
+
+
+## Troubleshooting
+- Ensure backend running on 4000 before frontend
+- Check Supabase env vars are set
+- Run `npx prisma generate` after schema changes
+- For CORS issues check backend cors config
+
