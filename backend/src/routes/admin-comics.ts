@@ -78,6 +78,7 @@ const createSchema = z.object({
   pageCount: z.preprocess((a) => parseInt(a as string, 10), z.number()),
 });
 
+// create endpoint - handles pdf and cover upload
 router.post("/", upload.fields([{ name: 'pdf', maxCount: 1 }, { name: 'cover', maxCount: 1 }]), async (req: Request, res: Response): Promise<void> => {
   try {
     const parsed = createSchema.parse(req.body);
@@ -285,5 +286,6 @@ router.post("/:id/unpublish", async (req: Request, res: Response): Promise<void>
 });
 
 export default router;
+
 
 
