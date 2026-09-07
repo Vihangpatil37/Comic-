@@ -1,4 +1,5 @@
-﻿// renamed pdfFile variable for clarity
+﻿// log for file uploads
+// renamed pdfFile variable for clarity
 // log for delete
 // console.log for publish
 // log when comic created
@@ -294,6 +295,7 @@ router.post("/:id/unpublish", async (req: Request, res: Response): Promise<void>
 });
 
 export default router;
+
 
 
 
