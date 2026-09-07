@@ -1,4 +1,5 @@
-﻿// console.log for publish
+﻿// log for delete
+// console.log for publish
 // log when comic created
 // better pdf validation error message
 import { Router, Request, Response } from "express";
@@ -225,7 +226,7 @@ router.delete("/:id", async (req: Request, res: Response): Promise<void> => {
     ...(existing.coverKey ? [supabase.storage.from(STORAGE_BUCKET_COVERS).remove([existing.coverKey])] : [])
   ]);
 
-  await prisma.comic.delete({ where: { id: existing.id } });
+  await console.log("Deleting comic:", req.params.id); prisma.comic.delete({ where: { id: existing.id } });
   res.status(204).send();
 });
 
@@ -292,6 +293,8 @@ router.post("/:id/unpublish", async (req: Request, res: Response): Promise<void>
 });
 
 export default router;
+
+
 
 
 
