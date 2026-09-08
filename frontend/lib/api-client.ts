@@ -1,4 +1,4 @@
-﻿// api client - all backend endpoints
+// api client - all backend endpoints
 import { supabase } from "./supabase-client";
 import type { ComicSummary, ComicDetail } from "../../shared/types/comic";
 
@@ -7,7 +7,10 @@ const API_BASE = process.env.NEXT_PUBLIC_API_BASE_URL || "http://localhost:4000/
 // getAuthHeader - gets supabase token for admin calls
 async function getAuthHeader(): Promise<Record<string, string>> {
   const { data: { session } } = await supabase.auth.getSession();
-  return session?.access_token ? { Authorization: `Bearer ${session.access_token}` } : {};
+  if (session?.access_token) return { Authorization: `Bearer ${session.access_token}` };
+  // Fallback: refresh session from server (needed after page reload in production)
+  const { data } = await supabase.auth.refreshSession();
+  return data.session?.access_token ? { Authorization: `Bearer ${data.session.access_token}` } : {};
 }
 
 // fetchComics - pagination support via page param
