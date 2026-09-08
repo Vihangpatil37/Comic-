@@ -1,18 +1,7 @@
-﻿// homepage - server component that fetches comics
+// homepage - server component that fetches comics
 import { fetchComics } from "../lib/api-client";
 import IndexClient from "./IndexClient";
-import { Metadata } from "next";
-
 export const dynamic = 'force-dynamic';
-
-export const metadata: Metadata = {
-  title: "Comic Archive",
-  description: "A digital comic archive.",
-  openGraph: {
-    title: "Comic Archive",
-    description: "A digital comic archive.",
-  },
-};
 
 export default async function Home() {
   try {

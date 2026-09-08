@@ -1,4 +1,4 @@
-﻿// fixed indentation
+// fixed indentation
 // layout component - shared header/footer for all pages
 import type { Metadata } from "next";
 import Link from "next/link";
@@ -7,8 +7,25 @@ import "./globals.css";
 
 // metadata for seo - title and description
 export const metadata: Metadata = {
-  title: "Comic Archive",
-  description: "A curated digital comic archive - discover and read comics online",
+  metadataBase: new URL("https://comicarchive.vercel.app"),
+  title: {
+    default: "Comic Archive",
+    template: "%s | Comic Archive",
+  },
+  description: "A curated digital comic archive — discover and read comics online",
+  openGraph: {
+    type: "website",
+    siteName: "Comic Archive",
+    title: "Comic Archive",
+    description: "A curated digital comic archive — discover and read comics online",
+  },
+  twitter: {
+    card: "summary_large_image",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function RootLayout({

@@ -8,7 +8,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   try {
     const comic = await fetchComic(params.slug);
     return {
-      title: `${comic.title} | Comic Archive`,
+      title: comic.title,
       description: comic.description || `Read ${comic.title}`,
       openGraph: {
         title: comic.title,
@@ -29,8 +29,23 @@ export default async function ComicDetail({ params }: { params: { slug: string }
     notFound();
   }
 
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "CreativeWork",
+    "name": comic.title,
+    "description": comic.description || "",
+    "image": comic.coverUrl || "",
+    "datePublished": comic.publishedAt || comic.createdAt || "",
+    "genre": comic.category || "",
+    "numberOfPages": comic.pageCount
+  };
+
   return (
     <main className="max-w-4xl mx-auto px-6 lg:px-8 py-12">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <Link href="/" className="inline-block mb-12 text-slate hover:text-ink transition-colors">
         ← Archive
       </Link>
