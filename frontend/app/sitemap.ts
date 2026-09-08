@@ -1,6 +1,8 @@
 import { MetadataRoute } from 'next'
 import { fetchComics } from '../lib/api-client'
 
+export const dynamic = 'force-dynamic'
+
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = 'https://comicarchive.vercel.app'
   
