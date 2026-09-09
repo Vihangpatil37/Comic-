@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import "../styles/tokens.css";
 import "./globals.css";
+import Footer from "@/components/Footer";
 
 // metadata for seo - title and description
 export const metadata: Metadata = {
@@ -65,15 +66,7 @@ export default function RootLayout({
         <div className="flex-grow">
           {children}
         </div>
-        <footer className="p-6 lg:p-8 flex items-center gap-4">
-          <Image
-            src="/logo.png"
-            alt="Comic Archive"
-            width={120}
-            height={36}
-          />
-          <p className="text-slate text-sm">© {new Date().getFullYear()} Comic Archive</p>
-        </footer>
+        <Footer />
       </body>
     </html>
   );

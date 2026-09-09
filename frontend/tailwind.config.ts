@@ -7,6 +7,9 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      animation: {
+        'modal-in': 'modal-in 150ms ease-out',
+      },
       colors: {
         vellum: "var(--color-vellum)",
         paper: "var(--color-paper)",
